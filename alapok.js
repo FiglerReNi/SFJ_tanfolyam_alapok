@@ -85,3 +85,73 @@ var tomb4 = tomb3;
 // tomb3 === tomb4 ->true
 //ha módosítok a tomb4-en, akkor a tomb3 is változik
 //ha primitiveknél módosítok a masodik-on az elso nem fog változni
+//10.video - 11.video - 12.video
+/*
+-while()
+-do() while()
+-for()
+ */
+//13.video
+/*
+Minden program kap egy bizonyos memóriát a teljes memóriából, amivel gazdálkodhat.
+Memória túlcsordulás (stack overflow): pl ha végtelen ciklust csinálunk, elfogy a memóriánk
+i++ -> előbb adja át az értéket és utána növeljük az értéket
+++i -> egyből növel az értéken és utána adja át
+ */
+var pelda = 0;
+var pelda3 = 0;
+var pelda1 = pelda++; // pelda = 1; pelda1 = 0
+//alert(pelda + ' ' + pelda1);
+var pelda2 = ++pelda3; // pelda3 = 1; pelda2 = 1
+//alert(pelda3 + ' ' + pelda2);
+//14.video
+/*
+-metódusok
+-függvények : van visszatérési értéke, olyan metódusok
+ */
+//15.video
+/*
+-paraméter -> kivülről
+-attribútum/argumentum -> belülről
+ */
+//16.video - 17.video
+var text = 'A kutya nagyon aranyos kutya.';
+var toChange = 'kutya';
+var newWord = 'macska';
+
+function censor(text, toChange, newWord) {
+    var toReturn = text;
+    while(toReturn.includes(toChange)){
+        toReturn = toReturn.replace(toChange, newWord) //első előfordulást cseréli
+    }
+    return toReturn;
+}
+
+var result = censor(text, toChange, newWord);
+//alert(result);
+//18.video
+var osztaly = ['Laci', 'Gyula', 'Tomi', 'Gábor'];
+function listaz(lista) {
+    var vissza = '';
+    for(i = 0; i < lista.length; i++){
+        vissza = vissza + (i+1) + '. ' + lista[i] + '\n';
+    }
+    return vissza
+}
+var eredmeny = listaz(osztaly);
+alert(eredmeny);
+//21.video
+/*
+\ -> escape karakter
+ */
+var i = 2;
+for(i = 0; i < 3; i++){
+    //belül az i nulla lesz, mert helyi változóként létre hoztuk
+}
+for(j = 0; j < 3; j++){
+    //hozzáfér a külső i-hez de kint nem férünk hozzá a j-hez
+}
+//22.video
+/*
+-operátorok
+ */
