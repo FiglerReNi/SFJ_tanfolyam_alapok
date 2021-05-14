@@ -50,6 +50,8 @@ var tomb3 = ['alma', 'körte'];
 var tomb4 = tomb3;
 // tomb3 == tomb4 ->true
 // tomb3 === tomb4 ->true
+tomb4[1] = 'paradicsom'
+alert(tomb3)
 
 var pelda = 0;
 var pelda3 = 0;
