@@ -1,0 +1,129 @@
+https://jsfiddle.net/
+
+Hardver alapok:
+  	• memória (ez az  asztal teteje, ha újraindítjuk a gépet ez kiürül) Minden program kap egy bizonyos memóriát a teljes memóriából, amivel gazdálkodhat. Memória túlcsordulás (stack overflow): pl ha végtelen ciklust csinálunk (infinite loop), elfogy a memóriánk.
+  	• merevlemez (itt van minden tárolva, ha vmi-vel dolgozunk innen kerül a memóriába)
+  	• CPU (gépi kódot ért, a programozási nyelveket nem) feladatokat végzi el
+  	• fordító (ez fordítja gépi kódra a programot, minden programozási nyelvnek más-más fordítója van).
+  		○         1. szintaktikai elemzés (van-e elgépelés)
+  		○         2. szemantikai elemzés (kód tartalmát vizsgálja)
+  	• vannak olyan programozási nyelvek, amelyeknek a fordítója nem gépi kódra fordít
+  	• A boolean kevesebb helyet foglal a memóriában, mintha stringet tárolunk
+  	• Amikor lértejön egy változó (szám, string) egy adott hely foglalódik le neki a memóriában, ahol letárolódik
+
+Alap fogalmak:
+  Programozási nyelvek:
+    Alacsony szintű programozási nyelvek
+    	Több sor kódot kell írni ugyanahhoz, procedurálisak pl.:C
+
+    Magas szintű programozási nyelvek
+    	OOP-sek általában, több beépített függvény, sokmindent megcsinál automatikusan pl.: C++, C#, Java
+
+  Pszeudo kód:
+    Nyelvfüggetlenül ír le kódot. Egyértelmű, átlátható.
+
+  Belépési pont:
+    Minden programozási nyelvnek van egy belépési pontja, Java-ban pl a main függvény, ez futtatja le a programot.
+
+  Modellek:
+  	Vízesés modell – elavult
+  	Agilis szoftverfejlesztés - ma ezt használják inkább
+
+  IDE:
+  	Integrated Development Environment - fejlesztői környezet
+  		NetBeans
+  		STS
+  		InteliJ
+      Eclipse
+
+  változó: (absztarkció, nem az értékre figyelünk)
+  	•     név: kötelező a létrehozásor, nem kezdőthet számmal és nem lehet benne ékezetes karakter
+  	•     érték: nem kötelező, de amíg nincs, a változó állapota undefined, viszont ha üres az értéke az már nem undefined, hanem null állapot, ami nem egyenlő a nullával, ez egy szám.
+  	•     deklarál: változó létrehozása
+  	•     inicializálás: érték adás
+  	•     explicit: ha megadjuk az értéket már az elején pedig nem kötelező
+
+  Adattípusok
+  	• undefined, - nimcs érték adva a változóhoz még
+  	• null, - üres érték
+  	• Number - számok
+  	• String - karakter/karakterek sorozata
+  	• Boolean - true/false
+
+  Szam+szam = az összegük
+  Szöveg+szöveg =  concat
+  Szám+szöveg = concat, a szám adattípust vált (kasztolódik)
+  Szám+szám+szöveg = számok összeg és concattel a szöveg
+
+  If-else if-else
+  Switch-case
+  For(x, feltétel, y)
+  	X mindig csak egyszer fut le a for kezdetén
+  	Y minden ciklus végén lefut
+  While()
+  Do() while
+
+  Array: olyan változó, ami egy egységben tárol több értéket
+
+  i++ -> előbb adja át az értéket a változónak amibe bekerakjuk és utána növeljük az értéket
+  ++i -> egyből növel az értéken és utána adja át a változónak amibe belerakjuk
+
+  metódusok
+  függvények : van visszatérési értéke, olyan metódusok
+  paraméter -> kivülről
+  attribútum/argumentum -> belülről
+
+
+  \ -> escape karakter
+
+  operátorok: &&, ||, ==, !=, ===, =, <,>
+
+  Helyi változók:
+  	hatáskörrel rendelkeznek
+  var i = 2;
+  for(i = 0; i < 3; i++){
+      //belül az i nulla lesz, mert helyi változóként létre hoztuk
+  }
+  for(j = 0; j < 3; j++){
+      //hozzáfér a külső i-hez de kint nem férünk hozzá a j-hez
+  }
+
+  .sort - abc szerint rendez
+  .length - vizsgált elem hosszát adja vissza
+  .replace - az új értéket adja vissza
+  .includes - true/false
+
+Primitívek, Referenciák és Objektumok:
+  Primitivek: változók, kevés adat fér rájuk, ha egy változót egyenlővé teszünk egy másikkal az értéke és a típusa is true lesz, mert lemásolja (undefined, null, szám, szöveg, boolean lehet a primitiv)
+  Objektumok: Több adat fér rá, összetett értéket is felvehetnek pl.:tömb, a neve egy referencia (nem tartalmaz konkrét értéket, mint a primitíveknél), ami egy mutató a helyére vonatkozóan (utalás a valódi érték helyére) két azonos értékekkel rendelkező tomb érték és típus összehasonlítása is false lesz, mert más helyre mutat a nevük. Két különböző helyen élnek, ha az egyiket egyenlővé teszem a másikkal akkor ezek true-t adnak, mert ugyanarra fognak mutatni.
+
+  == összehasonlítás->érték
+  === összehasonlítás -> érték + adattípus
+
+  primitivek
+  var j = 17;
+  var k = 17;
+  j == k ->true;
+  j === k ->true;
+  Ha j stringként lenne '17', akkor a második (===) összehasonlítás már false
+  var elso = '18';
+  var masodik = elso;
+  elso == masodik ->true;
+  elso === masodik ->true;
+  Ha egyenlővé teszem a másodikat az elsővel, le fogja másolni az értékét és az adattípusát is egy az egyben. Két különböző dolog lesz a másolt és a másolandó
+
+  objektumok
+  var tomb1 = ['alma', 'körte'];
+  var tomb2 = ['alma', 'körte'];
+  tomb1 == tomb2 ->false;
+  tomb1 === tomb2 ->false;
+  var tomb3 = ['alma', 'körte'];
+  var tomb4 = tomb3;
+  tomb3 == tomb4 ->true
+  tomb3 === tomb4 ->true
+
+  ha módosítok a tomb4-en, akkor a tomb3 is változik, mert ugyanazon a helyen élő objektumra mutatnak.
+  ha primitiveknél módosítok a masodik-on az elso nem fog változni, primitíveknél a program lemásolja x értékét, utána ők különböző életet élnek.
+
+
+
